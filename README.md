@@ -16,6 +16,8 @@
 ## Benutzung
 
 - Starte das Programm mit `python main.py`
+- Das programm frägt nun Schritt für Schritt die Daten ab
+- Am Ende wird das Experiment als Dictionary ausgegeben
 
 bbbb
 kkkk
