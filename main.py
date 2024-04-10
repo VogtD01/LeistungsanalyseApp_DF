@@ -35,3 +35,9 @@ if __name__ == "__main__":
   print(dict_experiment)
 
 #Konnentar hinzu
+
+import json 
+
+# Convert and write JSON object to file
+with open("sample.json", "w") as outfile:
+    json.dump(dict_experiment, outfile)
