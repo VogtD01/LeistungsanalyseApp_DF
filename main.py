@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
   first_name, last_name, sex, age = eingabe_person()
   dict_person = build_person(first_name, last_name, sex, age)
-  #Erste Testpeson in Dicronary Experiment anlegen
+  #Erste Testperson in Dicronary Experiment anlegen
   anzahl_testpersonen = 1
   dict_experiment["Person " + str(anzahl_testpersonen)] = dict_person
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
   print(dict_experiment)
 
-#Konnentar hinzu
+#als file Speichern
 
 import json 
 
