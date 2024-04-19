@@ -27,3 +27,39 @@ def build_experiment(experiment_name, date, supervisor, subject) -> dict:
             "subject" :   subject
             }
     return dict
+
+
+def eingabe_experiment():
+  supervisor = input("Bitte Name des Versuchsleiters eingeben: ")
+  subject = input("Bitte Thema des Experiments eingeben: ")
+  date = input("Bitte Datum eingeben: ")
+  experiment_name = input("Bitte Name des Experiments eingeben: ")
+  return supervisor, subject, date, experiment_name
+    
+
+# Eingabe der Personendaten mit Funktion
+def eingabe_person():
+    first_name =  input("Bitte Vorname der Testperson eingeben: ")
+    last_name =  input("Bitte Nachname der Testperson eingeben: ")
+    sex =  input("Bitte 'male' oder 'female' als Geschlecht eingeben: ")
+    age = int(input("Bitte Alter der Testperson eingeben: "))
+    return first_name, last_name, sex, age
+
+########################################################
+#Testfunktionen ohne input
+
+def eingabe_experiment_test():
+  supervisor = "hermann" #input("Bitte Name des Versuchsleiters eingeben: ")
+  subject = "laufen" #input("Bitte Thema des Experiments eingeben: ")
+  date = 23.4 #input("Bitte Datum eingeben: ")
+  experiment_name = "vo2max" #input("Bitte Name des Experiments eingeben: ")
+  return supervisor, subject, date, experiment_name
+    
+
+# Eingabe der Personendaten mit Funktion
+def eingabe_person_test():
+    first_name = "1"# input("Bitte Vorname der Testperson eingeben: ")
+    last_name = "2" #input("Bitte Nachname der Testperson eingeben: ")
+    sex = "male" # input("Bitte 'male' oder 'female' als Geschlecht eingeben: ")
+    age = 23 #int(input("Bitte Alter der Testperson eingeben: "))
+    return first_name, last_name, sex, age
