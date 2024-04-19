@@ -22,5 +22,6 @@ if __name__ == "__main__":
     
     # Speichere das Experiment
     experiment.save(speichername + ".json")
+    person.save(speichername + "_personen.json")
     #print(person.estimate_max_hr)
     

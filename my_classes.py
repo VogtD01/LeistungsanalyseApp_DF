@@ -8,18 +8,21 @@ class Saveable:
 
 class Person ():
 
-  def __init__(self, first_name, last_name, sex, age):
+  def __init__(self, first_name, last_name, sex, age, birth_date):
     self.first_name = first_name
     self.last_name = last_name
     self.sex = sex
     self.age = age
+    self._birth_date = birth_date
 
   def save(self, filename):
         data = {
             "first_name": self.first_name,
             "last_name": self.last_name,
             "sex": self.sex,
-            "age": self.age
+            "age": self.age,
+            #"birth_date": self._birth_date
+
         }
         with open(filename, 'w') as file:
             json.dump(data, file)
@@ -52,6 +55,16 @@ class Experiment (Saveable):
     self.date = date
     self.experiment_name = experiment_name  
 
+
+############################################
+
+#Subklassen
+
+class Subject(Person):
+    pass
+
+class Examiner(Person):
+    pass
 
 #p1 = Person("Max", "Mustermann", 1990)
 #p4.save("personen.json")

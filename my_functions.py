@@ -43,7 +43,8 @@ def eingabe_person():
     last_name =  input("Bitte Nachname der Testperson eingeben: ")
     sex =  input("Bitte 'male' oder 'female' als Geschlecht eingeben: ")
     age = int(input("Bitte Alter der Testperson eingeben: "))
-    return first_name, last_name, sex, age
+    birth_date = input("Bitte Geburtsdatum der Testperson eingeben: ")
+    return first_name, last_name, sex, age, birth_date
 
 ########################################################
 #Testfunktionen ohne input
@@ -62,4 +63,5 @@ def eingabe_person_test():
     last_name = "2" #input("Bitte Nachname der Testperson eingeben: ")
     sex = "male" # input("Bitte 'male' oder 'female' als Geschlecht eingeben: ")
     age = 23 #int(input("Bitte Alter der Testperson eingeben: "))
+    birth_date = "23.4.1998" #input("Bitte Geburtsdatum der Testperson eingeben: ")
     return first_name, last_name, sex, age
