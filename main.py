@@ -4,10 +4,10 @@ from my_classes import Saveable, Person, Experiment
 
 if __name__ == "__main__":
 
-    speichername = input("Bitte Dateinamen eingeben: ")
+    speichername = input("Bitte Dateinamen eingeben: ")     #name der Datei, in der die Daten gespeichert werden sollen
     experiment = Experiment(*eingabe_experiment())
     experiment.__dict__ 
-    #person = Person(*eingabe_person_test())
+    
     anzahl_testpersonen = 1
 
 
