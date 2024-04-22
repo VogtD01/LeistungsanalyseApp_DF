@@ -1,3 +1,5 @@
+from my_classes import Supervisor
+
 def estimate_max_hr(age_years : int , sex : str) -> int:
   """
   See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/  [Titel anhand dieser PMC-ID in Citavi-Projekt übernehmen]  for different formulas
@@ -14,9 +16,7 @@ def estimate_max_hr(age_years : int , sex : str) -> int:
 def build_person(first_name, last_name, sex, age) -> dict:
     """Returns a dictionary of information about a supervisor or subject."""
     dict = { "first_name" : first_name,
-             "last_name" : last_name,
-             "age" : age,
-             "estimate_max_hr" : estimate_max_hr(age,sex)}
+             "last_name" : last_name}
     return dict
 
 def build_experiment(experiment_name, date, supervisor, subject) -> dict:
@@ -31,17 +31,23 @@ def build_experiment(experiment_name, date, supervisor, subject) -> dict:
 def eingabe_person():
     first_name = input("Bitte Vorname der Testperson eingeben: ")
     last_name = input("Bitte Nachname der Testperson eingeben: ")
-    sex = input("Bitte 'male' oder 'female' als Geschlecht eingeben: ")
-    age = int(input("Bitte Alter der Testperson eingeben: "))
-    return first_name, last_name, sex, age
+    return first_name, last_name
+
+def eingabe_subject():
+   birth_date = input("Bitte Geburtsdatum der Testperson eingeben: ")
+   age = int(input("Bitte Alter der Testperson eingeben: "))
+   sex = input("Bitte Geschlecht der Testperson eingeben: ")
+   return birth_date, age, sex 
 
 def eingabe_experiment():
     supervisor = input("Bitte Name des Versuchsleiters eingeben: ")
-    subject = input("Bitte Thema des Experiments eingeben: ")
+    thema = input("Bitte Thema des Experiments eingeben: ")
     date = input("Bitte Datum eingeben: ")
     experiment_name = input("Bitte Name des Experiments eingeben: ")
-    return experiment_name, date, supervisor, subject
+    return experiment_name, date, supervisor, thema
 
+supervisor = Supervisor("Hermann", "Meyer")
+print(supervisor.first_name)
 '''
 def eingabe_experiment_test():
   supervisor = "hermann" #input("Bitte Name des Versuchsleiters eingeben: ")
