@@ -1,5 +1,5 @@
 from my_functions import estimate_max_hr, build_person, build_experiment, eingabe_experiment, eingabe_person, eingabe_person_test , eingabe_experiment_test
-from my_classes import Saveable, Person, Experiment 
+from my_classes_old import Saveable, Person, Experiment 
 
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+import my_classes
+
 def estimate_max_hr(age_years : int , sex : str) -> int:
   """
   See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/  [Titel anhand dieser PMC-ID in Citavi-Projekt übernehmen]  for different formulas
@@ -30,12 +32,18 @@ def build_experiment(experiment_name, date, supervisor, subject) -> dict:
 
 
 def eingabe_experiment():
-  supervisor = input("Bitte Name des Versuchsleiters eingeben: ")
+  supervisor_firtsname = input("Bitte Vorname des Versuchsleiters eingeben: ")
+  supervisor_lastname = input("Bitte Nachname des Versuchsleiters eingeben: ")
+  id = input("Bitte ID des Versuchsleiters eingeben: ")
+  s1 = my_classes.Supervisor(supervisor_firtsname, supervisor_lastname, id)
+
+  supervisor = s1.first_name + " " + s1.last_name + " ID: " + id
   subject = input("Bitte Thema des Experiments eingeben: ")
   date = input("Bitte Datum eingeben: ")
   experiment_name = input("Bitte Name des Experiments eingeben: ")
   return supervisor, subject, date, experiment_name
-    
+
+#print(eingabe_experiment())
 
 # Eingabe der Personendaten mit Funktion
 def eingabe_person():
@@ -50,11 +58,14 @@ def eingabe_person():
 #Testfunktionen ohne input
 
 def eingabe_experiment_test():
+  
   supervisor = "hermann" #input("Bitte Name des Versuchsleiters eingeben: ")
   subject = "laufen" #input("Bitte Thema des Experiments eingeben: ")
   date = 23.4 #input("Bitte Datum eingeben: ")
   experiment_name = "vo2max" #input("Bitte Name des Experiments eingeben: ")
   return supervisor, subject, date, experiment_name
+
+  
     
 
 # Eingabe der Personendaten mit Funktion
