@@ -69,7 +69,7 @@ class Subject(Person):
         with open(filename, 'w') as file:
             json.dump(data, file)
 
-     def update_email(self, url):
+    def update_email(self, url):
         # Defines the data posted to the API
         data = {
             "name": self.first_name,
