@@ -1,4 +1,5 @@
 import json
+import requests
 
 
 class Person():
@@ -19,6 +20,16 @@ class Person():
         dict = { "first_name" : self.first_name,
                 "last_name" : self.last_name}
         return dict
+    
+    def put(self,url):
+        # Defines the data putted to the API
+        data = {
+            "name": self.first_name
+        }
+        data_json = json.dumps(data)
+        response = requests.put(url, data=data_json)
+
+        return(response.status_code)
 
 
 class Experiment():
@@ -34,11 +45,12 @@ class Experiment():
             json.dump(data, file)
 
 class Subject(Person):
-    def __init__(self, first_name, last_name, birth_date, age, sex):
+    def __init__(self, first_name, last_name, birth_date, age, sex, email):
         super().__init__(first_name, last_name)
         self.__birth_date = birth_date
         self.age = age
         self.sex = sex
+        self.email = email
 
 
     def estimate_max_hr(self):  
@@ -56,6 +68,17 @@ class Subject(Person):
         data = self.__dict__
         with open(filename, 'w') as file:
             json.dump(data, file)
+
+     def update_email(self, url):
+        # Defines the data posted to the API
+        data = {
+            "name": self.first_name,
+            "email": self.email
+        }
+        data_json = json.dumps(data)
+        response = requests.post(url, data=data_json)
+
+        return(response.status_code)
 
 class Supervisor(Person):
     def __init__(self, first_name, last_name):
