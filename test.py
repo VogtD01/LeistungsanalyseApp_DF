@@ -1,4 +1,4 @@
-import requests
+"""import requests
 
 class Person():
     def __init__(self, first_name):
@@ -11,4 +11,4 @@ class Person():
             print("Person erfolgreich auf dem Webserver erstellt.")
         else:
             print("Fehler beim Erstellen der Person auf dem Webserver.")
-
+"""
